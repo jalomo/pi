@@ -1,0 +1,54 @@
+<Alloy>
+	<Window class="container" layout="vertical"  backgroundImage="/img/background.png">
+		<View layout="vertical">
+			<View id="header" height="70"  width="100%">
+				<View top="20">
+				
+				<ImageView image="/img/logo2.png" ></ImageView>
+				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				</View>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50"  valor="index" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="index">CHEF GIANNI Y PIZZAIOLA</Label>
+				<ImageView image="/img/next.png" right="5" valor="index"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_galeria" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_galeria">GALERÍA DE FOTOS</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_galeria"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_menu" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_menu">MENÙ</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_menu"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_pide" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_pide">PIDE EN LÌNEA</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_pide"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_reservaciones" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_reservaciones">RESERVACIONES</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_reservaciones"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_grupo" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_grupo">GRUPO MUSICAL</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_grupo"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_sucursal" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_sucursal">SUCURSAL</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_sucursal"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+			<View height="50" valor="menu_siguenos" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menu_siguenos">SÌGUENOS EN FACEBOOK</Label>
+				<ImageView image="/img/next.png" right="5" valor="menu_siguenos"></ImageView>
+			</View>
+			<View backgroundColor="#FFFFFF" height="1"></View>
+		</View>
+	</Window>
+</Alloy>

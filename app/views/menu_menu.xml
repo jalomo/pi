@@ -1,0 +1,50 @@
+<Alloy>
+	<Window>
+		<View class="container" layout="vertical">
+			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
+				<View top="20">
+				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				<ImageView image="/img/logo.png" ></ImageView>
+				</View>
+			</View>
+			
+			<View layout="vertical" height="25" backgroundColor="#FFFFFF" id="id_menu">
+				<View height="20" onClick="cl_menu" ><Label valor="0" width="100%" id="seleccion" left="40%">Pizzas</Label></View>
+				<View height="1" backgroundColor="#000000"></View>
+				<View layout="vertical" visible="false" id="menus">
+					<View height="20" ><Label width="100%" onClick="muestra" valor_m="Pizzas" valor_id="array_pizzas" left="40%">Pizzas</Label></View>
+					<View height="20" ><Label width="100%" onClick="muestra" valor_m="Pastas" valor_id="array_pastas" left="40%">Pastas</Label></View>
+					<View height="20" ><Label width="100%" onClick="muestra" valor_m="Ensaladas" valor_id="array_ensaladas" left="40%">Ensaladas</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Vinos" valor_id="array_vinos" left="40%">Vinos</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Entremeses" valor_id="array_entremeses" left="40%">Entremeses</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Especiales" valor_id="array_especiales" left="40%">Especiales</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Pescados y Mariscos" valor_id="array_mariscos" left="40%">Pescados y Mariscos</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Postres" valor_id="array_postres" left="40%">Postres</Label></View>
+					<View height="20" ><Label  width="100%" onClick="muestra" valor_m="Carnes" valor_id="array_carnes" left="40%">Carnes</Label></View>
+				</View>
+			</View>
+			<View id="cargar_categorias" backgroundColor="#FFFFFF"></View>
+			<!--View id="id_pizzas">
+			<ListView  >
+		        <ListSection>
+		            <ListItem title="List item 1">pizza uno</ListItem>
+		            <ListItem title="List item 2">pizza dos</ListItem>
+		            <ListItem title="List item 3">pizza tres</ListItem>
+		        </ListSection>
+		    </ListView>
+		    </View>
+		    
+		    <View id="id_ensaladas">
+			<ListView  >
+		        <ListSection>
+		            <ListItem title="List item 1"> ensalda uno</ListItem>
+		            <ListItem title="List item 2">ensalada dos</ListItem>
+		            <ListItem title="List item 3">ensalada tres</ListItem>
+		        </ListSection>
+		    </ListView>
+		    </View-->
+			
+		</View>
+	</Window>
+	
+</Alloy>

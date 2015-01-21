@@ -1,0 +1,54 @@
+<Alloy>
+	<Window backgroundColor="#FFFFFF">
+		<View class="container" layout="vertical">
+			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
+				<View top="20">
+				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				<ImageView image="/img/logo.png" ></ImageView>
+				</View>
+			</View>
+			
+			<ScrollView layout="vertical">
+			<View top="10" height="90" layout="horizontal" width="100%">
+				<Label color="#red" textAlign="center">Para hacer pedidos en lìnea es nesesario que ingreses tus datos, asì evitamos pedidos en broma </Label>
+			</View>
+			
+			<View height="50">
+				<TextField  width="95%" height="40" hintText="Nombre..." id="nombre"></TextField>	 
+			</View>
+			<View height="1" backgroundColor="#000000"></View>
+			
+			<View height="50">
+				<TextField  width="95%" height="40" hintText="Email..." id="email"></TextField>	 
+			</View>
+			<View height="1" backgroundColor="#000000"></View>
+			
+			<View height="50">
+				<TextField  width="95%" height="40" hintText="Telèfono..." id="telefono"></TextField>	 
+			</View>
+			<View height="1" backgroundColor="#000000"></View>
+			
+			<View height="50">
+				<TextField  width="95%" height="40" hintText="Calle..." id="calle"></TextField>	 
+			</View>
+			<View height="1" backgroundColor="#000000"></View>
+			
+			<View height="50">
+				<TextField  width="95%" height="40" hintText="Colonia..." id="colonia"></TextField>	 
+			</View>
+			<View height="1" backgroundColor="#000000"></View>
+			
+			<View height="50">
+				<Label  width="95%" height="30" color="red">Galerias</Label>	 
+			</View>
+			
+			<View height="50">
+				<Button width="90%" color="#ffffff" backgroundColor="blue" borderRadius="5" id="continuar">Continuar</Button>	 
+			</View>
+			
+			</ScrollView>
+			
+		</View>
+	</Window>
+	
+</Alloy>

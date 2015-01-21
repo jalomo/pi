@@ -1,0 +1,24 @@
+<Alloy>
+	<Window backgroundColor="#ffffff">
+		<View class="container" layout="vertical">
+			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
+				<View top="20">
+				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				<ImageView image="/img/logo.png" ></ImageView>
+				</View>
+			</View>
+			
+			<View height="150" width="100%">
+				<ImageView image="/img/galerias.png" height="100" width="100" left="1" ></ImageView>
+				<Label width="100%" top="2" height="40" color="red" left="110">C.C. GALERÍAS</Label>
+				<Label top="45" width="100%" left="110">20000 Aguascalientes</Label>
+				<ImageView image="/img/call.png" height="30" width="30" left="80%" top="90" id="call_id" ></ImageView>
+			</View>
+			<View height="100%" width="100%">
+				<WebView id="webview" url="https://www.google.com.mx/maps/place/C,+Mac%C3%ADas+Arellano,+20150+Aguascalientes,+AGS/@21.9075273,-102.2837924,17z/data=!3m1!4b1!4m2!3m1!1s0x8429ee4f38116795:0x7667f40e22f5b6ec" />
+			</View>
+			
+		</View>
+	</Window>
+	
+</Alloy>

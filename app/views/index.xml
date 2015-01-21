@@ -1,0 +1,24 @@
+<Alloy>
+	
+	<Window backgroundColor="#FFFFFF">
+		<View layout="vertical">
+			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
+				<View top="20">
+				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				<ImageView image="/img/logo.png" ></ImageView>
+				</View>
+			</View>
+			<View id="id_image"   backgroundColor="#FFFFFF" height="150">
+					<ImageView image="/img/ini.png" height="150" width="150"></ImageView>
+				
+			</View>
+			
+			 
+			<View>
+				<ScrollView id="scrollView"  showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" >
+		            <ImageView image="/img/resena.png" height="500" width="100%"></ImageView>
+		        </ScrollView>
+			</View>
+		</View>
+	</Window>
+</Alloy>
