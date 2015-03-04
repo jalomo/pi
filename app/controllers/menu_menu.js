@@ -12,11 +12,11 @@ function cl_menu(e){
 	
 	if(e.source.valor=="0"){
 		e.source.valor="1";
-		$.id_menu.height="25";
+		$.id_menu.height="45";
 		$.menus.visible="false";
 	}else{
 		e.source.valor="0";
-		$.id_menu.height="200";
+		$.id_menu.height="240";
 		$.menus.visible="true";
 		
 	}
@@ -177,7 +177,7 @@ $.cargar_categorias.add(TheTable);
 function muestra(e){
 	//alert(e.source.valor_m);
 	$.seleccion.text=e.source.valor_m;
-	$.id_menu.height="25";
+	$.id_menu.height="45";
     $.menus.visible="false";
     var aux=e.source.valor_id;
     //alert(aux);
@@ -214,6 +214,12 @@ function muestra(e){
     
 }
 
+
+
+
+
+
+
 TheTable.addEventListener('click', function(e) {
     //alert(e.rowData.leftImage);
     var win = Ti.UI.createWindow();
@@ -229,8 +235,8 @@ TheTable.addEventListener('click', function(e) {
 	
 	var image = Ti.UI.createImageView({
 	  image:e.rowData.leftImage,
-	   width:'95%',
-	   height:'70%'
+	  width:'95%',
+	   //height:'70%'
 	});
 	win.add(image);
 	

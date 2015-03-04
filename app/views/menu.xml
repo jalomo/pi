@@ -24,9 +24,9 @@
 				<ImageView image="/img/next.png" right="5" valor="menu_menu"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
-			<View height="50" valor="menu_pide" onClick="menu_menu">
-				<Label color="#FFFFFF" left="5" valor="menu_pide">PIDE EN LÌNEA</Label>
-				<ImageView image="/img/next.png" right="5" valor="menu_pide"></ImageView>
+			<View height="50" valor="pide_menu" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="pide_menu">PIDE EN LÌNEA</Label>
+				<ImageView image="/img/next.png" right="5" valor="pide_menu"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
 			<View height="50" valor="menu_reservaciones" onClick="menu_menu">
@@ -44,7 +44,7 @@
 				<ImageView image="/img/next.png" right="5" valor="menu_sucursal"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
-			<View height="50" valor="menu_siguenos" onClick="menu_menu">
+			<View height="50" valor="menu_siguenos" onClick="menu_facebook">
 				<Label color="#FFFFFF" left="5" valor="menu_siguenos">SÌGUENOS EN FACEBOOK</Label>
 				<ImageView image="/img/next.png" right="5" valor="menu_siguenos"></ImageView>
 			</View>

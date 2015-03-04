@@ -3,7 +3,7 @@ $.menuId.addEventListener('click',function(){
  	page.open();
 });
 
-$.reserva.addEventListener('click',function(){
+/*$.reserva.addEventListener('click',function(){
 	var nombre=$.nombre.value;
 	var email=$.email.value;
 	var fecha =$.fecha.value;
@@ -17,4 +17,4 @@ $.reserva.addEventListener('click',function(){
 	//var page= Alloy.createController('pide_menu').getView();
  	//page.open();||  
  	//alert(nombre);
-});
+});*/

@@ -1,10 +1,10 @@
-<Alloy>
+ <Alloy>
 	
 	<Window backgroundColor="#FFFFFF">
 		<View layout="vertical">
 			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
 				<View top="20">
-				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
+				<ImageView image="/img/menu.png" left="5" id="menuId" height="100%"></ImageView>
 				<ImageView image="/img/logo.png" ></ImageView>
 				</View>
 			</View>

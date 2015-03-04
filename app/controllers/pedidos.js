@@ -148,7 +148,7 @@ function carga_categorias(){
 		   
 		   var buttonEnviar = Titanium.UI.createButton({
 					   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,	
-					   title: 'Enviar pedido',
+					   title: 'Llamar',
 					   width: '90%',
 					   height: 40,
 					   backgroundColor:"blue",

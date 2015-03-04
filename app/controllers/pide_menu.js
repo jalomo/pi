@@ -115,7 +115,7 @@ function carga_categorias(idcategoria){
 					   id:'id'+aux,
 					});
 					var image = Ti.UI.createImageView({
-					  image:json[s].menuImage,
+					  image:'http://zavordigital.com/panel_pizzaiola/'+json[s].menuImage,
 					   width:'120',
 					   height:'120',
 					   left:2

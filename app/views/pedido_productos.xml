@@ -1,0 +1,21 @@
+<Alloy>
+	<Window backgroundColor="#F7F7F7">
+		<View layout="vertical">
+			<View id="header" height="50" backgroundColor="#87D37C"   width="100%">
+				<View top="20">
+				<Label color="#ffffff" left="1%" id="menuId">Regresar</Label>
+				<Label left="40%" color="#ffffff">Pedidos</Label>	
+				<!--ImageView image="/img/menu.png" left="90%" id="menuId"></ImageView-->
+				
+				</View>
+			</View>
+			
+			<View layout="vertical" height="30" left="20%" id="" onClick="nuevo_pedido">
+				<Label color="9B59B6" onClick="nuevo_pedido">+ Nuevo pedido</Label>
+			</View>
+			
+			<View id="cargar_categorias" backgroundColor="#ffffff" layout="horizontal"></View>
+	    </View>		
+	</Window>
+	 
+</Alloy>
