@@ -9,18 +9,19 @@
 			</View>
 			
 			<View layout="vertical" height="45" backgroundColor="#FFFFFF" id="id_menu">
-				<View height="40" onClick="cl_menu" valor="" ><Label valor="0" width="100%" id="seleccion" left="40%">Pizzas</Label></View>
+				<View height="40" onClick="cl_menu" valor="" ><Label valor="0" width="100%" id="seleccion" textAlign="center">Antipasti</Label></View>
 				<View height="1" backgroundColor="#000000"></View>
 				<View layout="vertical" visible="false" id="menus">
-					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Pizzas" valor_id="array_pizzas" left="40%">Pizzas</Label></View>
-					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Pastas" valor_id="array_pastas" left="40%">Pastas</Label></View>
-					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Ensaladas" valor_id="array_ensaladas" left="40%">Ensaladas</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Vinos" valor_id="array_vinos" left="40%">Vinos</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Entremeses" valor_id="array_entremeses" left="40%">Entremeses</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Especiales" valor_id="array_especiales" left="40%">Especiales</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Pescados y Mariscos" valor_id="array_mariscos" left="40%">Pescados y Mariscos</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Postres" valor_id="array_postres" left="40%">Postres</Label></View>
-					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Carnes" valor_id="array_carnes" left="40%">Carnes</Label></View>
+					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Antipasti" valor_id="uno"  textAlign="center">Antipasti</Label></View>
+					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Ensalate" valor_id="dos" textAlign="center">Ensalate</Label></View>
+					<View height="40" ><Label width="100%" onClick="muestra" valor_m="Del Mare" valor_id="tres" textAlign="center">Del Mare</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="La Pasta" valor_id="cuatro" textAlign="center">La Pasta</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Cortes al horno de leña" valor_id="cinco" textAlign="center">Cortes al horno de leña</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Le Pizze al Horno de Leña" valor_id="seis" textAlign="center">Le Pizze al Horno de Leña</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Postres" valor_id="siete" textAlign="center">Postres</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Bebidas" valor_id="ocho" textAlign="center">Bebidas</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Licores" valor_id="nueve" textAlign="center">Licores</Label></View>
+					<View height="40" ><Label  width="100%" onClick="muestra" valor_m="Vinos" valor_id="diez" textAlign="center">Vinos</Label></View>
 				</View>
 			</View>
 			<View id="cargar_categorias" backgroundColor="#FFFFFF"></View>

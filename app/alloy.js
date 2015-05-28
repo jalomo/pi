@@ -119,3 +119,87 @@ Alloy.Globals.searchConferencia = function(id){
 	  return contenido;
 };
 */
+
+
+
+
+
+//NOTIFICACIONES PUSH
+var Cloud = require("ti.cloud");
+var deviceToken = null;
+// Check if the device is running iOS 8 or later
+if(OS_IOS){
+	if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
+	 
+	 // Wait for user settings to be registered before registering for push notifications
+	    Ti.App.iOS.addEventListener('usernotificationsettings', function registerForPush() {
+	 
+	 // Remove event listener once registered for push notifications
+	        Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush); 
+	 
+	        Ti.Network.registerForPushNotifications({
+	            success: deviceTokenSuccess,
+	            error: deviceTokenError,
+	            callback: receivePush
+	        });
+	    });
+	 
+	 // Register notification types to use
+	    Ti.App.iOS.registerUserNotificationSettings({
+		    types: [
+	            Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,
+	            Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,
+	            Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE
+	        ]
+	    });
+	}
+	 
+	// For iOS 7 and earlier
+	else {
+	    Ti.Network.registerForPushNotifications({
+	 // Specifies which notifications to receive
+	        types: [
+	            Ti.Network.NOTIFICATION_TYPE_BADGE,
+	            Ti.Network.NOTIFICATION_TYPE_ALERT,
+	            Ti.Network.NOTIFICATION_TYPE_SOUND
+	        ],
+	        success: deviceTokenSuccess,
+	        error: deviceTokenError,
+	        callback: receivePush
+	    });
+	}
+}
+else{
+	//Cuando es android 
+	var CloudPush = require('ti.cloudpush');
+	
+	var deviceToken = null;
+	 
+	CloudPush.retrieveDeviceToken({
+	    success: deviceTokenSuccess,
+	    error: deviceTokenError
+	});
+};
+// Process incoming push notifications
+function receivePush(e) {
+    Ti.API.info('Received push: ' + JSON.stringify(e));
+}
+// Save the device token for subsequent API calls
+function deviceTokenSuccess(e) {
+    deviceToken = e.deviceToken;
+    Ti.API.info('Token: '+e.deviceToken);
+    
+     Cloud.PushNotifications.subscribeToken({
+	        device_token: e.deviceToken,
+	        channel: 'Pizzaiola',
+	        type: Ti.Platform.name == 'android' ? 'android' : 'ios'
+	    }, function (e) {
+	        if (e.success) 
+	            Ti.API.info('Subscribed');
+	         else 
+	            Ti.API.error('Error:\n' + ((e.error && e.message) || JSON.stringify(e))); 
+	    });
+}
+function deviceTokenError(e) {
+    Ti.API.error('Failed to register for push notifications! ' + e.error);
+}

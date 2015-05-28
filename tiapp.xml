@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.zavordigital.pizzaiola</id>
     <name>Pizzaiola</name>
-    <version>1.0</version>
+    <version>1.1</version>
     <publisher>zavordigital</publisher>
     <url>http://</url>
     <description>undefined</description>
@@ -13,6 +13,8 @@
     <analytics>true</analytics>
     <guid>2ad2e273-b77b-40fb-91bb-80ce73c17990</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="acs-api-key-production" type="string">Gx6WMX6tWSvMUHP1sSvKhNpGUgmVb2X9</property>
+    <property name="acs-api-key-development" type="string">YPr0ZD5fuARA0KuEcTuTTfrrjdlx0PsS</property>
     <ios>
         <plist>
             <dict>
@@ -39,9 +41,30 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-    	<manifest android:versionCode="1" android:versionName="1.0" >
-            <application android:theme="@style/Theme.NoActionBar"/>
-        </manifest>    
+        <manifest android:versionCode="7" android:versionName="3.4">
+            <!--application android:theme="@style/Theme.NoActionBar"/-->
+            <!-- Allows the API to download data from Google Map servers -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows the API to cache data -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <!-- Use GPS for device location -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <!-- Use Wi-Fi or mobile connection for device location -->
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <!-- Allows the API to access Google web-based services -->
+            <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+            <!-- Specify OpenGL ES 2.0 as a requirement -->
+            <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+            <!-- Replace <com.domain.appid> with your application ID -->
+            <uses-permission android:name="com.zavordigital.pizzaiola.permission.MAPS_RECEIVE"/>
+            <permission
+                android:name="com.zavordigital.pizzaiola.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <application android:theme="@style/Theme.NoActionBar">
+                <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCJxqP_YwTsmi-vucYUmShiJ8D9X8_PoXs"/>
+            </application>
+        </manifest>
     </android>
     <mobileweb>
         <precache/>
@@ -51,7 +74,12 @@
         </splash>
         <!--theme>default</theme-->
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+        <module platform="android">ti.cloudpush</module>
+        <module platform="commonjs">ti.cloud</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>
@@ -59,7 +87,7 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.4.1.GA</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

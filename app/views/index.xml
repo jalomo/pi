@@ -15,8 +15,8 @@
 			
 			 
 			<View>
-				<ScrollView id="scrollView"  showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" >
-		            <ImageView image="/img/resena.png" height="500" width="100%"></ImageView>
+				<ScrollView id="scrollView"  >
+		            <ImageView image="/img/descripcion.png" width="100%"></ImageView>
 		        </ScrollView>
 			</View>
 		</View>

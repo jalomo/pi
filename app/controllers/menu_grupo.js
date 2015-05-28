@@ -22,7 +22,7 @@ function carga_imagen(){
 					  image:'http://zavordigital.com/panel_pizzaiola/'+json[s].imagenGrupo,
 					   width:'100%',
 					   height:'100%',
-					   left:2
+					   //left:2
 					});
 				$.imagen_grupo.add(image);	
 		    }

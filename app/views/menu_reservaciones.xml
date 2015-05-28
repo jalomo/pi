@@ -8,11 +8,18 @@
 				</View>
 			</View>
 			
-			<View width="90%" height="100">
-				<Label color="red" width="90%" textAlign="center">Reserva tu mesa y disfruta de la variedad que ofrecemos.</Label>
+			<View width="90%" height="300">
+				<Label color="red" width="90%" textAlign="center" top="0" height="80" >Reserva tu mesa y disfruta de la variedad que ofrecemos.</Label>
+				
+				
+				
+				<Label color="red" width="90%" textAlign="center" top="80" height="80">Las reservaciones se respetaràn sòlo 15 minutos y con la mesa completa.</Label>
+				
+				<Label color="red" width="90%" textAlign="center" top="160" height="80">El privado requiere tres días de anticipación.</Label>
+				
 			</View>
 			
-			<ImageView image="/img/llamar.png" width="50%" ></ImageView>
+			<ImageView image="/img/llamar.png" width="50%" id="llamar" ></ImageView>
 			
 			<!--View height="1" width="100%" backgroundColor="#000000"></View>
 			<TextField hintText="Nombre..." width="100%" height="40" id="nombre"></TextField>

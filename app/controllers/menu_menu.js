@@ -3,6 +3,17 @@ $.menuId.addEventListener('click',function(){
  	page.open();
 });
 
+var picker = Titanium.UI.createPicker();
+var data = [];
+data.push(Titanium.UI.createPickerRow({title:'Bananas'}));
+data.push(Titanium.UI.createPickerRow({title:'Strawberries'}));
+data.push(Titanium.UI.createPickerRow({title:'Mangos'}));
+data.push(Titanium.UI.createPickerRow({title:'Grapes'}));
+picker.add(data);
+
+$.cargar_categorias.add(picker);
+
+
 /*
  * metodo que despliega el menù .
  * autor: jalomo <jalomo@hotmail.es>
@@ -16,7 +27,7 @@ function cl_menu(e){
 		$.menus.visible="false";
 	}else{
 		e.source.valor="0";
-		$.id_menu.height="240";
+		$.id_menu.height="440";
 		$.menus.visible="true";
 		
 	}
@@ -168,7 +179,8 @@ var array_carnes = [
 var TheTable = Titanium.UI.createTableView({
 		data:array_pizzas
 		});
-$.cargar_categorias.add(TheTable);
+//$.cargar_categorias.add(TheTable);
+//carga_categorias(1);
 
 /*
  * metodo que despliega el menù que se eligio.
@@ -180,44 +192,175 @@ function muestra(e){
 	$.id_menu.height="45";
     $.menus.visible="false";
     var aux=e.source.valor_id;
-    //alert(aux);
+    alert(aux);
     switch (aux) {
-	case 'array_pizzas':
-		TheTable.setData(array_pizzas);
+	case 'uno':
+		//TheTable.setData(array_pizzas);
+		carga_categorias(1);
 	    break;
-	case 'array_pastas':
-	    TheTable.setData(array_pastas);
+	case 'dos':
+	    //TheTable.setData(array_pastas);
+	    carga_categorias(2);
 	    break;
-	case 'array_ensaladas':
-	    TheTable.setData(array_ensaladas);
+	case 'tres':
+	    //TheTable.setData(array_ensaladas);
+	    carga_categorias(3);
 	    break;
-	case 'array_vinos':
-	    TheTable.setData(array_vinos);
+	case 'cuatro':
+	    //TheTable.setData(array_vinos);
+	    carga_categorias(4);
 	    break;
-	case 'array_entremeses':
-	    TheTable.setData(array_entremeses);
+	case 'cinco':
+	    //TheTable.setData(array_entremeses);
+	    carga_categorias(5);
 	    break;
-	case 'array_especiales':
-	    TheTable.setData(array_especiales);
+	case 'seis':
+	    //TheTable.setData(array_especiales);
+	    carga_categorias(6);
 	    break; 
-	case 'array_mariscos':
-	    TheTable.setData(array_mariscos);
+	case 'siete':
+	    //TheTable.setData(array_mariscos);
+	    carga_categorias(7);
 	    break;
-	case 'array_postres':
-	    TheTable.setData(array_postres);
+	case 'ocho':
+	    //TheTable.setData(array_postres);
+	    carga_categorias(8);
 	    break; 
-	case 'array_carnes':
-	    TheTable.setData(array_carnes);
-	    break;                           
+	case 'nueve':
+	    //TheTable.setData(array_carnes);
+	    carga_categorias(9);
+	    break;   
+    case 'diez':
+	    //TheTable.setData(array_carnes);
+	    alert('10');
+	    carga_categorias(10);
+	    break;   	                            
 	}
     
     
 }
 
 
-
-
-
+function carga_categorias(idcategoria){
+	
+	var scrollView1 = Ti.UI.createScrollView({
+	  height: 'auto',
+	  layout:"vertical"
+	});
+	
+	$.cargar_categorias.removeAllChildren();
+	var url = "http://zavordigital.com/panel_pizzaiola/index.php/mobiles/get_precios/"+idcategoria;
+	var json;
+	 
+	var xhr = Ti.Network.createHTTPClient({
+	    onload: function() {
+	 // parse the retrieved data, turning it into a JavaScript object
+	    	json = JSON.parse(this.responseText);
+	    	aux=0;
+	 		for (s in json)
+		    {
+		        
+		        
+				var view1 = Titanium.UI.createView({
+					   borderRadius:1,
+					   border:2,
+					   borderColor:'#cccccc',
+					   backgroundColor:'#ffffff',
+					   width:'100%',
+					   top:1,
+					   height:213,
+					   id:'id'+aux,
+					});
+					var image = Ti.UI.createImageView({
+					  image:'http://zavordigital.com/panel_pizzaiola/'+json[s].menuImage,
+					   width:'120',
+					   height:'213',
+					   left:2
+					});
+				    image.addEventListener('click',function(e){
+						
+						var win = Ti.UI.createWindow();
+					    var view = Titanium.UI.createView({
+						   backgroundColor:'#000000',
+						   opacity:'0.5',
+						   width:'100%',
+						   height:'100%'
+						});
+						win.add(view);
+						
+					
+						var image1 = Ti.UI.createImageView({
+						  image:e.source.image,// 'http://zavordigital.com/panel_pizzaiola/'+json[s].menuImage
+						  width:'100%',
+							 //  height:'100%'
+						});
+						win.add(image1);
+						
+						var button = Titanium.UI.createButton({
+						   title: 'cerrar',
+						   top: 10,
+						   width: 100,
+						   height: 50,
+						   right:5,
+						   color:'#ffffff'
+						});
+						win.add(button);
+						button.addEventListener('click',function(e)
+						{
+						   win.close();
+						});
+						
+						
+						win.open();
+						
+						
+						
+					});
+					
+					
+					view1.add(image);
+					
+					var label = Ti.UI.createLabel({
+					  backgroundColor:'#ffffff',
+					  color:'#e74c3c',
+					  text: json[s].menuNombre,
+					  //textAlign: 'right',
+					  //bottom:0,
+					  width: "60%", 
+					  height:70,
+					  top:10,
+					  font: { fontSize:15 },
+					  left:'130'
+					});
+					view1.add(label);
+					
+					var label2 = Ti.UI.createLabel({
+					  backgroundColor:'#ffffff',
+					  color:'#7f8c8d',
+					  text: json[s].menuDescripcion,
+					  //textAlign: 'right',
+					  //bottom:0,
+					  width: "60%", 
+					  height:110,
+					 top:70,
+					  font: { fontSize:15 },
+					  left:'130'
+					});
+					view1.add(label2);
+					
+					
+					
+				    aux++;
+					scrollView1.add(view1);
+					
+		    }
+		    
+		   $.cargar_categorias.add(scrollView1);
+		}
+	});
+	xhr.open("GET", url);
+	xhr.send();
+}
 
 
 TheTable.addEventListener('click', function(e) {

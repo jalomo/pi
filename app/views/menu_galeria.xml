@@ -8,6 +8,8 @@
 				</View>
 			</View>
 			
+			<ScrollView height="auto" width="100%" layout="vertical" >
+			
 			<View layout="vertical" width="100%" height="100"  top="5">
 			<View layout="horizontal" width="100%">
 				<ImageView image="/img/galeria/uno.jpg" width="30%" height="100" left="4%"  onClick="open_image"></ImageView>
@@ -39,6 +41,40 @@
 				<ImageView image="/img/galeria/doce.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
 			</View>
 			</View>
+			
+			
+			<View layout="vertical" width="100%" height="100"  top="5">
+			<View layout="horizontal" width="100%">
+				<ImageView image="/img/galeria/nuevo1.jpg" width="30%" height="100" left="4%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo2.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo3.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+			</View>
+			</View>
+			
+			<View layout="vertical" width="100%" height="100"  top="5">
+			<View layout="horizontal" width="100%">
+				<ImageView image="/img/galeria/nuevo4.jpg" width="30%" height="100" left="4%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo5.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo6.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+			</View>
+			</View>
+			
+			<View layout="vertical" width="100%" height="100"  top="5">
+			<View layout="horizontal" width="100%">
+				<ImageView image="/img/galeria/nuevo7.jpg" width="30%" height="100" left="4%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo8.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+				<ImageView image="/img/galeria/nuevo9.jpg" width="30%" height="100" left="1%" onClick="open_image"></ImageView>
+			</View>
+			</View>
+			
+			<View layout="vertical" width="100%" height="100"  top="5">
+			<View layout="horizontal" width="100%">
+				<ImageView image="/img/galeria/nuevo10.jpg" width="30%" height="100" left="4%" onClick="open_image"></ImageView>
+				
+			</View>
+			</View>
+			
+			</ScrollView>
 			
 		</View>
 	</Window>

@@ -3,6 +3,10 @@ $.menuId.addEventListener('click',function(){
  	page.open();
 });
 
+$.llamar.addEventListener('click',function(){
+	Ti.Platform.openURL('tel://4499126664');
+});
+
 /*$.reserva.addEventListener('click',function(){
 	var nombre=$.nombre.value;
 	var email=$.email.value;

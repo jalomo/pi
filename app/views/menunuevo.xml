@@ -1,12 +1,10 @@
 <Alloy>
-	<Window backgroundColor="#ffffff">
+	<Window>
 		<View class="container" layout="vertical">
 			<View id="header" height="50" backgroundColor="#CCCCCC"   width="100%">
 				<View top="20">
 				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
 				<ImageView image="/img/logo.png" ></ImageView>
-				<ImageView image="/img/carrito.png" left="90%" width="40" id="ver_pedido" ></ImageView>
-				<!--Button width="40" backgroundColor="blue" left="90%" id="ver_pedido">ver</Button-->
 				</View>
 			</View>
 			
@@ -18,17 +16,7 @@
 				</View>
 				
 			</View>
-			
-			
-				<!--ScrollView layout="vertical" height="80%"-->
-					<View id="cargar_categorias" backgroundColor="#ffffff" layout="horizontal"></View>
-				<!--/ScrollView-->
-				<!--View height="50">
-					<Button width="90%" color="#ffffff" backgroundColor="blue" borderRadius="5">Agregar a pedido</Button>
-				</View-->
-			
-			
-			
+			<View id="cargar_categorias" backgroundColor="#ffffff" ></View>
 			
 			
 		</View>

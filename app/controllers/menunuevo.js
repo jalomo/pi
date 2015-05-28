@@ -4,33 +4,7 @@ $.menuId.addEventListener('click',function(){
 });
 
 
-$.ver_pedido.addEventListener('click',function(){
-	//var pedidos=Alloy.Globals.muestraPedido();
-	//alert(pedidos);
-	var page= Alloy.createController('pedidos').getView();
- 	page.open();
-});
-/*
- * metodo que despliega el menù .
- * autor: jalomo <jalomo@hotmail.es>
- */
-/*function cl_menu(e){
-	//alert(e.source.valor);
-	
-	if(e.source.valor=="0"){
-		e.source.valor="1";
-		$.id_menu.height="25";
-		$.menus.visible="false";
-	}else{
-		e.source.valor="0";
-		$.id_menu.height="440";
-		$.menus.visible="true";
-		
-	}
-}
-*/
-
-function cl_menu(e){
+	function cl_menu(e){
 		
 		if(OS_IOS){
 	
@@ -134,29 +108,13 @@ function cl_menu(e){
 
 
 
-
-
-carga_categorias(1);
-
-
 /*
- * funcion que carga categorias.
- * jalomo<jalomo@hotmail.es>
- **/
+ * metodo que despliega el menù que se eligio.
+ * jalomo@hotmail.es
+ */
 function muestra(aux){
 	
-	/*var view = Titanium.UI.createView({
-	   borderRadius:1,
-	   backgroundColor:'red',
-	   width:'100%',
-	   height:50
-	});
-
-	$.seleccion.text=e.source.valor_m;
-	$.id_menu.height="25";
-    $.menus.visible="false";
-    var aux=e.source.valor_id;
- */
+    //alert(aux);
     switch (aux) {
 	case 'uno':
 		//TheTable.setData(array_pizzas);
@@ -197,7 +155,7 @@ function muestra(aux){
     case 'diez':
 	    //TheTable.setData(array_carnes);
 	    carga_categorias(10);
-	    break;  
+	    break; 
 	case 'once':
 	    //TheTable.setData(array_carnes);
 	    carga_categorias(11);
@@ -205,20 +163,25 @@ function muestra(aux){
 	case 'doce':
 	    //TheTable.setData(array_carnes);
 	    carga_categorias(12);
-	    break;      	                            
+	    break;           	                            
 	}
+	
+    
+    
 }
 
+carga_categorias(1);
 
-
+	
 function carga_categorias(idcategoria){
 	
 	var scrollView1 = Ti.UI.createScrollView({
-	  height: '100%',
+	 // height: 'auto',
 	  layout:"vertical"
 	});
 	
 	$.cargar_categorias.removeAllChildren();
+	
 	var url = "http://zavordigital.com/panel_pizzaiola/index.php/mobiles/get_precios/"+idcategoria;
 	var json;
 	 
@@ -238,102 +201,90 @@ function carga_categorias(idcategoria){
 					   backgroundColor:'#ffffff',
 					   width:'100%',
 					   top:1,
-					   height:150,
-					   id:'id'+aux,
+					   height:213,
+					   
+					  id:'id'+aux,
 					});
 					var image = Ti.UI.createImageView({
 					 image:'http://zavordigital.com/panel_pizzaiola/'+json[s].menuImage,
 					   width:'117',
 					   height:'210',
-					   left:2
+					   left:0
 					});
+				    image.addEventListener('click',function(e){
+						
+						var win = Ti.UI.createWindow();
+					    var view = Titanium.UI.createView({
+						   backgroundColor:'#000000',
+						   opacity:'0.5',
+						   width:'100%',
+						   height:'100%'
+						});
+						win.add(view);
+						
+					
+						var image1 = Ti.UI.createImageView({
+						  image:e.source.image,
+						  width:'100%',
+							
+						});
+						win.add(image1);
+						
+						var button = Titanium.UI.createButton({
+						   title: 'cerrar',
+						   top: 10,
+						   width: 100,
+						   height: 50,
+						   right:5,
+						   color:'#ffffff'
+						});
+						win.add(button);
+						button.addEventListener('click',function(e)
+						{
+						   win.close();
+						});
+						
+						
+						win.open();
+						
+						
+						
+					});
+					
+					
 					view1.add(image);
 					
 					var label = Ti.UI.createLabel({
 					  backgroundColor:'#ffffff',
-					  color:'red',
-					  text: json[s].menuNombre,
-					  textAlign: 'right',
-					  bottom:0,
-					  width: 150, 
-					  height:100,
-					  top:0,
-					  font: { fontSize:10 },
-					  left:'40%'
+					  color:'#e74c3c',
+					  text:json[s].menuNombre,
+					  //textAlign: 'right',
+					  //bottom:0,
+					  width: "60%", 
+					  height:70,
+					  top:10,
+					  font: { fontSize:15 },
+					  left:'130'
 					});
 					view1.add(label);
 					
-					var labelP = Ti.UI.createLabel({
-					  backgroundColor:'#ffffff',
-					  color:'red',
-					  text: '$'+json[s].menuPrecio,
-					  textAlign: 'right',
-					  bottom:0,
-					  width: 150, 
-					  height:40,
-					  top:70,
-					  left:'40%'
-					});
-					view1.add(labelP);
-					
-					
-					var textField = Ti.UI.createTextField({
-					  //borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					  color: '#336699',
-					  top: 100, left: '70%',
-					  width: 50, height: 40,
-					  backgroundColor:'#cccccc',
-					  id:json[s].menuId,
-					  precio:json[s].menuPrecio,
-					  nombre:json[s].menuNombre,
-					  keyboardType:Titanium.UI.KEYBOARD_NUMBER_PAD,
-					  returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-					  borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
-					  
-					});
-					view1.add(textField);
-					
-					/*textField.addEventListener('change',function(e){
-					    e.source.value = e.source.value.replace(/[^0-9]+/,""); 
-					});
-					*/
 					var label2 = Ti.UI.createLabel({
 					  backgroundColor:'#ffffff',
-					  color:'#cccccc',
-					  text: 'Cantidad:',
-					  textAlign: 'right',
-					  top: 50, left: '40%',
-					  width: 80, height: 40,
-					  top:100
+					  color:'#7f8c8d',
+					  text: json[s].menuDescripcion,
+					  //textAlign: 'right',
+					  //bottom:0,
+					  width: "57%", 
+					  height:150,
+					 top:70,
+					  font: { fontSize:15 },
+					  left:'130'
 					});
 					view1.add(label2);
 					
-					var buttonEnviar = Titanium.UI.createButton({
-					   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,	
-					   title: '+',
-					   top: 100,
-					   width: 30,
-					   height: 30,
-					   backgroundColor:"#2980B9",
-					   color:'#ffffff',
-					   left: '90%',
-					   id:aux
-					});
-					buttonEnviar.addEventListener('click',function(e)
-					{
-					    var cantidad=scrollView1.children[e.source.id].children[3].value;
-					    var precio=scrollView1.children[e.source.id].children[3].precio;
-					    var id_producto=scrollView1.children[e.source.id].children[3].id;
-					    var titulo=scrollView1.children[e.source.id].children[3].nombre;
-					    if(cantidad!='0' || cantidad!=''){
-					    	Alloy.Globals.insertPredido(titulo,precio,cantidad,id_producto);
-					    	alert('Producto agregado ');
-					    }else{
-					    	alert('escribe una cantidad');
-					    }
-			
-					});
-					view1.add(buttonEnviar);
+					
+					
+				
 					
 				    aux++;
 					scrollView1.add(view1);
@@ -346,3 +297,5 @@ function carga_categorias(idcategoria){
 	xhr.open("GET", url);
 	xhr.send();
 }
+
+

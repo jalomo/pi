@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" layout="vertical"  backgroundImage="/img/background.png">
-		<View layout="vertical">
+		<ScrollView layout="vertical">
 			<View id="header" height="70"  width="100%">
 				<View top="20">
 				
@@ -8,9 +8,10 @@
 				<ImageView image="/img/menu.png" left="5" id="menuId"></ImageView>
 				</View>
 			</View>
+			
 			<View backgroundColor="#FFFFFF" height="1"></View>
 			<View height="50"  valor="index" onClick="menu_menu">
-				<Label color="#FFFFFF" left="5" valor="index">CHEF GIANNI Y PIZZAIOLA</Label>
+				<Label color="#FFFFFF" left="5" valor="index">RESEÑA PIZZAIOLA</Label>
 				<ImageView image="/img/next.png" right="5" valor="index"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
@@ -19,13 +20,13 @@
 				<ImageView image="/img/next.png" right="5" valor="menu_galeria"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
-			<View height="50" valor="menu_menu" onClick="menu_menu">
-				<Label color="#FFFFFF" left="5" valor="menu_menu">MENÙ</Label>
-				<ImageView image="/img/next.png" right="5" valor="menu_menu"></ImageView>
+			<View height="50" valor="menunuevo" onClick="menu_menu">
+				<Label color="#FFFFFF" left="5" valor="menunuevo">MENÙ</Label>
+				<ImageView image="/img/next.png" right="5" valor="menunuevo"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
 			<View height="50" valor="pide_menu" onClick="menu_menu">
-				<Label color="#FFFFFF" left="5" valor="pide_menu">PIDE EN LÌNEA</Label>
+				<Label color="#FFFFFF" left="5" valor="pide_menu">HAZ TU PEDIDO</Label>
 				<ImageView image="/img/next.png" right="5" valor="pide_menu"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
@@ -40,7 +41,7 @@
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
 			<View height="50" valor="menu_sucursal" onClick="menu_menu">
-				<Label color="#FFFFFF" left="5" valor="menu_sucursal">SUCURSAL</Label>
+				<Label color="#FFFFFF" left="5" valor="menu_sucursal">UBÍCANOS</Label>
 				<ImageView image="/img/next.png" right="5" valor="menu_sucursal"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
@@ -49,6 +50,6 @@
 				<ImageView image="/img/next.png" right="5" valor="menu_siguenos"></ImageView>
 			</View>
 			<View backgroundColor="#FFFFFF" height="1"></View>
-		</View>
+		</ScrollView>
 	</Window>
 </Alloy>

@@ -8,7 +8,7 @@
 				
 				</View>
 			</View>
-			<View height="20"><Label id="seguir_add" color="blue" textAlign="right">Seguir agregando</Label></View>
+			<View height="50"><Label id="seguir_add" color="blue" textAlign="right">Seguir agregando</Label></View>
 			<View id="cargar_categorias" backgroundColor="#ffffff" layout="horizontal"></View>
 			
 			

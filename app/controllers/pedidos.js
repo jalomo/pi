@@ -130,12 +130,17 @@ function carga_categorias(){
 			scrollView1.add(view2);
 			
 			var icono = Ti.UI.createImageView({
-					  image:'/img/icono.png',
-					   width:'40%'
+					  image:'/img/llamar.png',
+					   width:'40%',
+					   top:50,
 					});
+			icono.addEventListener('click',function(){
+				Ti.Platform.openURL('tel://4499126664');
+			});
+					
 			scrollView1.add(icono);	
 			
-			var labeltexto = Ti.UI.createLabel({
+			/*var labeltexto = Ti.UI.createLabel({
 					  backgroundColor:'#ffffff',
 					  color:'#cccccc',
 					  text: "Gracias por ordenar en linea, le enviaremos un correo electrónico convirmando su pedido.",
@@ -158,6 +163,6 @@ function carga_categorias(){
 				alert("Tu pedido está siendo procesado");
 			});
 			
-		   scrollView1.add(buttonEnviar);						
+		   scrollView1.add(buttonEnviar);	*/					
 		   $.cargar_categorias.add(scrollView1);
 }

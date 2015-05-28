@@ -14,8 +14,8 @@
 				<Label top="45" width="100%" left="110">20000 Aguascalientes</Label>
 				<ImageView image="/img/call.png" height="30" width="30" left="80%" top="90" id="call_id" ></ImageView>
 			</View>
-			<View height="100%" width="100%">
-				<WebView id="webview" url="https://www.google.com.mx/maps/place/C,+Mac%C3%ADas+Arellano,+20150+Aguascalientes,+AGS/@21.9075273,-102.2837924,17z/data=!3m1!4b1!4m2!3m1!1s0x8429ee4f38116795:0x7667f40e22f5b6ec" />
+			<View height="100%" width="100%" id="mapa">
+				<!--WebView id="webview" url="https://www.google.com.mx/maps/place/C,+Mac%C3%ADas+Arellano,+20150+Aguascalientes,+AGS/@21.9075273,-102.2837924,17z/data=!3m1!4b1!4m2!3m1!1s0x8429ee4f38116795:0x7667f40e22f5b6ec" /-->
 			</View>
 			
 		</View>
